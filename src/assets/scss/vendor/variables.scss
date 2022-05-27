@@ -1,0 +1,9 @@
+// Create your SCSS variables here and it will override bootstrap styles
+@keyframes popupOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

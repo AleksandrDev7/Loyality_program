@@ -1,0 +1,99 @@
+.content {
+  .slider {
+    div {
+      a {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .tns-outer {
+    position: relative;
+
+    .tns-nav {
+      position: absolute;
+      bottom: 15px;
+      left: 45%;
+      z-index: 5;
+
+      button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid #fff;
+        margin-left: 12px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      &-active {
+        background-color: #fff !important;
+      }
+    }
+  }
+
+  #customize-controls {
+    position: relative;
+
+    .prevBtn,
+    .nextBtn {
+      position: absolute;
+      background: url("../images/arrow_off.svg") no-repeat, 100% 100%;
+      bottom: 170px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .prevBtn {
+      left: -45px;
+    }
+
+    .nextBtn {
+      right: -45px;
+      transform: rotate(180deg);
+    }
+
+    .prevBtn:hover,
+    .nextBtn:hover {
+      cursor: pointer;
+      background: url("../images/arrow_active.svg") no-repeat, 100% 100%;
+      width: 32px;
+      height: 32px;
+      transform: rotate(0deg);
+    }
+
+    .prevBtn:hover {
+      transform: rotate(180deg);
+      object-fit: fill;
+    }
+  }
+}
+
+
+@media screen and (max-device-width: 1405px) {
+  .content {
+    #customize-controls {
+      display: none;
+    }
+  }
+}
+
+
+@media screen and (max-device-width: 650px) {
+  .content {
+    .slider {
+      div {
+        a {
+          img {
+            width: 304px;
+          }
+        }
+      }
+    }
+  }
+}

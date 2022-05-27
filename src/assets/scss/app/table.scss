@@ -1,0 +1,185 @@
+.table-base {
+  display: block;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+
+  thead {
+    .subtitle-row {
+
+      th {
+        padding: 14px 10px;
+        text-transform: uppercase;
+        text-align: left;
+      }
+    }
+  }
+
+  .row,
+  .subtitle-row {
+    border-bottom: 1px solid #ead9cf;
+    vertical-align: top;
+
+    td {
+      padding: 14px 10px;
+      font-size: 14px;
+
+    }
+  }
+}
+
+.table-points {
+  thead {
+    text-align: left;
+
+    .subtitle-row {
+      th {
+        text-transform: none;
+        width: 100%;
+        padding-right: 100px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  tbody {
+    .row {
+      .triangle {
+        display: inline-block;
+      }
+
+      .triangle_down {
+        display: inline-block;
+      }
+
+      .triangle_off {
+        display: inline-block;
+      }
+
+      td {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.products {
+  margin: 30px 0 14px 0;
+  width: 100%;
+
+  thead {
+    tr {
+      border-collapse: collapse;
+
+      .products-title {
+        padding-bottom: 30px;
+        border-bottom: 1px solid transparent;
+        width: 40%;
+      }
+
+      th {
+        text-align: left;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #ead9cf;
+        width: 15%;
+
+        &:nth-child(2) {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  tbody {
+    width: 100%;
+
+    tr {
+      border-collapse: collapse;
+
+      .desc-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        ul {
+          padding-left: 24px;
+
+          li {
+            padding: 7px 0;
+
+            .subject {
+              font-size: 14px;
+              line-height: 18px;
+              color: #ac7a66;
+            }
+
+            span {
+              font-size: 14px;
+              line-height: 14px;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      td {
+        padding: 15px 0;
+        border-bottom: 1px solid #ead9cf;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.disabled {
+  td {
+    color: #ddd;
+  }
+}
+
+.triangle {
+  background: url('/images/triangle_green.svg') no-repeat, 100% 100%;
+  width: 18px;
+  height: 10px;
+  margin-right: 24px;
+}
+
+.triangle_down {
+  background: url('/images/triangle_red.svg') no-repeat, 100% 100%;
+  width: 18px;
+  height: 10px;
+  margin-right: 24px;
+}
+
+.triangle_off {
+  background: url('/images/triangle_off.svg') no-repeat, 100% 100%;
+  width: 18px;
+  height: 10px;
+  margin-right: 24px;
+}
+
+@media screen and (max-device-width: 1050px) {
+  .table-points {
+    thead {
+      .subtitle-row {
+        th {
+          padding-right: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 650px) {
+
+  .table-base {
+    display: none;
+  }
+
+  .table-mobile {
+    display: block;
+  }
+
+  .products {
+    display: none;
+  }
+}

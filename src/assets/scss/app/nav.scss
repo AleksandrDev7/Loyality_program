@@ -1,0 +1,219 @@
+.page {
+  .nav-menu {
+    z-index: 4;
+    width: 30%;
+    margin: 40px 0 0 0;
+
+    .burger-btn {
+      display: none;
+      padding: 12px 5px;
+      z-index: 5;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .burger-line {
+        width: 20px;
+        height: 1px;
+        background-color: #ac7a66;
+        position: relative;
+        border-radius: 1px;
+        transition: all .3s ease-in-out;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 1px;
+          background-color: #ac7a66;
+          position: absolute;
+          transition: all .3s ease-in-out;
+          border-radius: 1px;
+        }
+
+        &::before {
+          bottom: 6px;
+        }
+
+        &::after {
+          top: 6px;
+        }
+      }
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .active .burger-line {
+      background-color: transparent;
+      transition: all .3s ease-in-out;
+
+      &::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        transition: all .3s ease-in-out;
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    nav {
+      .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        li {
+          margin-bottom: 38px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:nth-child(1) {
+            &:hover > a {
+              color: #ac7a66;
+            }
+
+            &:hover > a img {
+              cursor: pointer;
+              background-image: url("../images/bonus_icon_active.svg");
+            }
+          }
+
+          &:nth-child(2) {
+            &:hover > a {
+              color: #ac7a66;
+            }
+
+            &:hover > a img {
+              cursor: pointer;
+              background-image: url("../images/history_icon_active.svg");
+            }
+          }
+
+          &:nth-child(3) {
+            &:hover > a {
+              color: #ac7a66;
+            }
+
+            &:hover > a img {
+              cursor: pointer;
+              background-image: url("../images/personalData_icon_active.svg");
+            }
+          }
+
+          &:nth-child(4) {
+            &:hover > a {
+              color: #ac7a66;
+            }
+
+            &:hover > a img {
+              cursor: pointer;
+              background-image: url("../images/subscriptions_icon_active.svg");
+            }
+          }
+
+          &:nth-child(5),
+          &:nth-child(6) {
+            &:hover {
+              cursor: pointer;
+            }
+
+            a {
+              color: #ddd;
+            }
+          }
+
+          &:nth-child(7) {
+            &:hover > a {
+              color: #ac7a66;
+            }
+
+            &:hover > a img {
+              cursor: pointer;
+              background-image: url("../images/exit_icon.svg");
+              width: 38px;
+              height: 38px;
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+
+          a {
+            position: relative;
+            vertical-align: middle;
+            padding: 15px 0;
+
+            img {
+              width: 38px;
+              height: 38px;
+              vertical-align: middle;
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .open-nav {
+    overflow: visible;
+    top: -60px !important;
+    transition: top 0.4s ease-in-out !important;
+  }
+}
+
+@media screen and (max-device-width: 1000px) {
+  .page {
+    .nav-menu {
+      position: fixed;
+      top: -700px;
+      left: 0;
+      background-color: #fff;
+      height: 550px;
+      width: 100%;
+      display: flex;
+      transition: top 0.4s ease-in-out;
+      padding-top: 50px;
+
+      nav {
+        .nav {
+          position: absolute;
+          left: 30%;
+        }
+      }
+
+      .burger-btn {
+        display: flex !important;
+        position: fixed;
+        top: 25px;
+        right: 50px;
+        z-index: 5;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-device-width: 650px) {
+  .page {
+    .nav-menu {
+      padding: 48px 0 0 0;
+
+      nav .nav {
+        left: 20%;
+      }
+
+      .burger-btn {
+        right: 8px;
+        z-index: 6;
+      }
+    }
+  }
+}

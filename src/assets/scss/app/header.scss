@@ -1,0 +1,159 @@
+header {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1296px;
+  padding: 34px 0 40px 0;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    height: 1px;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #ac7a66;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &_logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-grow: 0.1;
+      }
+
+      &_title {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex-grow: 0.6;
+
+        .subject {
+          font-size: 36px;
+          line-height: 34px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 14px;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 19px;
+          font-weight: 700;
+        }
+      }
+
+      &_profile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .profile_block {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          &:last-child {
+            margin-left: 12px;
+          }
+
+          &__icon,
+          &__icon-exit {
+            width: 18px;
+            height: 18px;
+            margin-left: 12px;
+            background-size: cover;
+          }
+
+          &__icon {
+            background: url("../images/icon_profile.svg") no-repeat;
+          }
+
+          &__icon-exit {
+            background: url("../images/exit_icon.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 1000px) {
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    padding: 8px 0 21px 0;
+
+    .header {
+      &-content {
+        position: relative;
+
+        &_logo {
+          flex-grow: 0.2;
+
+          img {
+            width: 71px;
+            height: 35px;
+
+            &:first-child {
+              width: 76px;
+              height: 60px;
+            }
+          }
+        }
+
+        &_title {
+          flex-grow: 0.5;
+
+          .subject {
+            font-size: 24px;
+            line-height: 23px;
+          }
+
+          p {
+            font-size: 20px;
+            line-height: 19px;
+          }
+        }
+
+        &_profile {
+          display: none;
+        }
+      }
+
+      &-line {
+        margin-top: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 650px) {
+  header {
+    .header {
+      height: 100%;
+
+      .header-line {
+        margin-top: 13px;
+      }
+
+      &-content_title {
+          display: none;
+      }
+    }
+  }
+}
